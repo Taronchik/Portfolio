@@ -1,0 +1,1594 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #fff8fa;
+    color: #30272a;
+    font-family: "Montserrat", sans-serif;
+    overflow-x: hidden;
+}
+
+button {
+    font-family: inherit;
+}
+
+::selection {
+    background: #e8a1b5;
+    color: #30272a;
+}
+
+
+/* =====================================================
+   ПЕРВЫЙ ЭКРАН
+===================================================== */
+
+.hero {
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    position: relative;
+
+    background:
+        radial-gradient(
+            circle at 50% 40%,
+            rgba(247, 190, 205, 0.72),
+            transparent 50%
+        );
+
+    overflow: hidden;
+}
+
+.hero-content {
+    animation: fadeUp 1.4s ease forwards;
+    padding: 40px;
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.small-title {
+    text-transform: uppercase;
+    letter-spacing: 5px;
+
+    font-size: 12px;
+    font-weight: 500;
+
+    color: #994e65;
+
+    margin-bottom: 35px;
+}
+
+.hero h1 {
+    font-family: "Playfair Display", serif;
+
+    font-size: clamp(70px, 10vw, 140px);
+
+    line-height: 0.85;
+    font-weight: 400;
+
+    color: #302629;
+}
+
+.hero h1 span {
+    color: #b95f78;
+    font-style: italic;
+}
+
+.line {
+    width: 90px;
+    height: 2px;
+
+    background: #d4869b;
+
+    margin: 38px auto 28px;
+}
+
+.hero-subtitle {
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 21px;
+
+    font-style: italic;
+
+    color: #674e57;
+}
+
+.open-button {
+    margin-top: 55px;
+
+    border: 1px solid #c9778d;
+
+    background: rgba(255,255,255,0.3);
+
+    padding: 16px 32px;
+
+    color: #84475a;
+
+    cursor: pointer;
+
+    font-size: 12px;
+
+    letter-spacing: 2px;
+
+    text-transform: uppercase;
+
+    transition: 0.3s ease;
+}
+
+.open-button:hover {
+    background: #f2c0cf;
+    transform: translateY(-3px);
+}
+
+.open-button span {
+    margin-left: 12px;
+}
+
+.scroll-hint {
+    position: absolute;
+
+    bottom: 30px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    color: #a46d7c;
+
+    font-size: 10px;
+
+    text-transform: uppercase;
+
+    letter-spacing: 3px;
+}
+
+.scroll-hint span {
+    display: block;
+
+    width: 2px;
+    height: 35px;
+
+    background: #d58b9e;
+
+    margin: 10px auto 0;
+}
+
+
+/* =====================================================
+   ОБЩИЕ СЕКЦИИ
+===================================================== */
+
+.section {
+    min-height: 100vh;
+
+    display: flex;
+
+    align-items: center;
+
+    position: relative;
+
+    padding: 110px 9%;
+
+    overflow: hidden;
+}
+
+.content {
+    max-width: 1100px;
+
+    width: 100%;
+
+    margin: auto;
+
+    position: relative;
+
+    z-index: 5;
+}
+
+.eyebrow {
+    text-transform: uppercase;
+
+    letter-spacing: 4px;
+
+    font-size: 12px;
+
+    color: #ae536c;
+
+    margin-bottom: 28px;
+
+    font-weight: 500;
+}
+
+h2 {
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: clamp(65px, 7vw, 100px);
+
+    font-weight: 500;
+
+    line-height: 0.9;
+
+    color: #30272a;
+
+    text-shadow:
+        0 1px 0 #ffffff,
+        1px 0 0 #ffffff,
+        -1px 0 0 #ffffff;
+}
+
+h2 span {
+    color: #b95f78;
+
+    font-style: italic;
+
+    text-shadow:
+        0 1px 0 #ffffff,
+        1px 0 0 #ffffff,
+        -1px 0 0 #ffffff;
+}
+
+
+/* =====================================================
+   ВТОРОЙ ЭКРАН
+===================================================== */
+
+.greeting {
+    background: #ffffff;
+
+    text-align: center;
+}
+
+.greeting-content {
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+}
+
+.greeting-text {
+    max-width: 850px;
+
+    margin-top: 65px;
+
+    font-size: 19px;
+
+    line-height: 1.9;
+
+    color: #4f4146;
+
+    text-align: center;
+}
+
+.greeting-text p {
+    margin-bottom: 30px;
+}
+
+
+/* =====================================================
+   ВЕТКИ НА ВТОРОМ ЭКРАНЕ
+===================================================== */
+
+.greeting::before,
+.greeting::after {
+    content: "";
+
+    position: absolute;
+
+    width: 230px;
+    height: 620px;
+
+    border: 3px solid rgba(211, 126, 151, 0.34);
+
+    border-color:
+        rgba(211,126,151,0.34)
+        transparent
+        transparent
+        transparent;
+
+    border-radius: 50%;
+
+    pointer-events: none;
+}
+
+.greeting::before {
+    left: -120px;
+    top: 8%;
+
+    transform: rotate(20deg);
+
+    box-shadow:
+        45px 100px 0 -15px rgba(211,126,151,0.22),
+        20px 230px 0 -12px rgba(211,126,151,0.2),
+        55px 380px 0 -15px rgba(211,126,151,0.18),
+        10px 520px 0 -12px rgba(211,126,151,0.2);
+}
+
+.greeting::after {
+    right: -120px;
+    bottom: 3%;
+
+    transform: rotate(-20deg);
+
+    box-shadow:
+        -45px -100px 0 -15px rgba(211,126,151,0.22),
+        -20px -230px 0 -12px rgba(211,126,151,0.2),
+        -55px -380px 0 -15px rgba(211,126,151,0.18),
+        -10px -520px 0 -12px rgba(211,126,151,0.2);
+}
+
+
+/* =====================================================
+   ТРЕТИЙ ЭКРАН
+===================================================== */
+
+.dreams {
+    background:
+        linear-gradient(
+            135deg,
+            #fff0f5 0%,
+            #f7cbd8 100%
+        );
+}
+
+.dream-intro {
+    margin: 45px auto 0;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 34px;
+
+    font-style: italic;
+
+    color: #875365;
+
+    text-align: center;
+
+    max-width: 700px;
+}
+
+.dream-cards {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 30px;
+
+    margin-top: 65px;
+}
+
+.dream-card {
+    background: rgba(255,255,255,0.9);
+
+    padding: 48px;
+
+    border: 1px solid #e2a1b3;
+
+    transition: 0.5s ease;
+
+    position: relative;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 15px 40px rgba(155,80,105,0.08);
+}
+
+.dream-card::after {
+    content: "";
+
+    position: absolute;
+
+    width: 180px;
+    height: 180px;
+
+    border-radius: 50%;
+
+    background: #f3b9ca;
+
+    right: -80px;
+    bottom: -80px;
+
+    transition: 0.5s ease;
+}
+
+.dream-card:hover {
+    transform: translateY(-10px);
+
+    box-shadow:
+        0 25px 60px rgba(155,80,105,0.15);
+}
+
+.dream-card:hover::after {
+    transform: scale(1.4);
+}
+
+.dream-icon {
+    font-size: 32px;
+
+    margin-bottom: 32px;
+}
+
+.card-label {
+    font-size: 10px;
+
+    text-transform: uppercase;
+
+    letter-spacing: 3px;
+
+    color: #a94f68;
+
+    font-weight: 500;
+}
+
+.dream-card h3 {
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 55px;
+
+    font-weight: 500;
+
+    margin: 8px 0 18px;
+
+    color: #33282d;
+}
+
+.dream-card > p:last-child {
+    font-size: 15px;
+
+    line-height: 1.8;
+
+    color: #625157;
+
+    max-width: 400px;
+}
+
+.together {
+    display: flex;
+
+    justify-content: center;
+
+    margin-top: 75px;
+
+    text-align: center;
+}
+
+.together p {
+    max-width: 700px;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 32px;
+
+    font-style: italic;
+
+    color: #59484f;
+}
+
+
+/* =====================================================
+   ЭВЕРЕСТ
+===================================================== */
+
+.mountain-section {
+    min-height: 100vh;
+
+    position: relative;
+
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            to bottom,
+            #fbeaf0 0%,
+            #efcdd8 48%,
+            #d1aeb9 100%
+        );
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    text-align: center;
+}
+
+.mountain-sky {
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        radial-gradient(
+            circle at 20% 25%,
+            rgba(255,255,255,0.8),
+            transparent 9%
+        ),
+        radial-gradient(
+            circle at 80% 20%,
+            rgba(255,255,255,0.65),
+            transparent 10%
+        );
+}
+
+
+/* =====================================================
+   ЗАГОЛОВОК ЭВЕРЕСТА
+===================================================== */
+
+.mountain-content {
+    position: absolute;
+
+    top: 3.5%;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    width: min(1000px, 94%);
+
+    z-index: 100;
+}
+
+.mountain-content .eyebrow {
+    margin-bottom: 0;
+}
+
+.mountain-title {
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 38px;
+
+    color: #5d4650;
+
+    margin-bottom: 0;
+}
+
+.mountain-number {
+    font-family: "Playfair Display", serif;
+
+    font-size: clamp(85px, 11vw, 150px);
+
+    font-weight: 500;
+
+    line-height: 0.9;
+
+    color: #62434e;
+
+    letter-spacing: 5px;
+
+    margin: 3px 0 20px;
+
+    text-shadow:
+        0 2px 0 #ffffff,
+        0 5px 20px rgba(70,40,50,0.18);
+}
+
+.mountain-number span {
+    font-family: "Montserrat", sans-serif;
+
+    font-size: 28px;
+
+    color: #704c58;
+
+    letter-spacing: 0;
+}
+
+
+/* =====================================================
+   ТЕКСТ ПО БОКАМ
+===================================================== */
+
+.mountain-text {
+    position: absolute;
+
+    top: 215px;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    width: min(1100px, 94%);
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: flex-start;
+
+    z-index: 90;
+}
+
+.mountain-message {
+    width: 285px;
+
+    padding: 18px 22px;
+
+    border-radius: 18px;
+
+    background: rgba(255, 248, 250, 0.88);
+
+    backdrop-filter: blur(7px);
+
+    box-shadow:
+        0 5px 25px rgba(100,60,75,0.08);
+
+    font-size: 16px;
+
+    line-height: 1.6;
+
+    color: #5a464e;
+
+    text-shadow:
+        0 1px 0 rgba(255,255,255,0.9);
+}
+
+.paw {
+    display: block;
+
+    font-size: 28px;
+
+    margin-bottom: 8px;
+}
+
+.right-message {
+    margin-top: 35px;
+}
+
+
+/* =====================================================
+   КНОПКА
+===================================================== */
+
+.summit-button {
+    position: absolute;
+
+    top: 430px;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    padding: 13px 25px;
+
+    background: rgba(255,255,255,0.82);
+
+    border: 1px solid #a96378;
+
+    color: #704755;
+
+    cursor: pointer;
+
+    text-transform: uppercase;
+
+    letter-spacing: 2px;
+
+    font-size: 10px;
+
+    transition: 0.3s;
+
+    z-index: 110;
+}
+
+.summit-button:hover {
+    background: rgba(255,255,255,0.95);
+
+    transform:
+        translateX(-50%)
+        translateY(-3px);
+}
+
+
+/* =====================================================
+   ОДНА БОЛЬШАЯ ГОРА
+===================================================== */
+
+.mountains {
+    position: absolute;
+
+    bottom: 0;
+
+    left: 0;
+
+    width: 100%;
+
+    height: 57%;
+
+    z-index: 4;
+
+    pointer-events: none;
+}
+
+.main-mountain {
+    position: absolute;
+
+    bottom: -70px;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    width: 900px;
+
+    height: 570px;
+
+    background:
+        linear-gradient(
+            110deg,
+            #b59aa5 0%,
+            #a0838e 42%,
+            #907480 72%,
+            #826975 100%
+        );
+
+    clip-path: polygon(
+        0% 100%,
+        8% 91%,
+        17% 82%,
+        25% 72%,
+        33% 61%,
+        39% 49%,
+        43% 36%,
+        46% 25%,
+        48% 15%,
+        50% 8%,
+        52% 15%,
+        54% 25%,
+        57% 36%,
+        61% 49%,
+        67% 61%,
+        75% 72%,
+        83% 82%,
+        92% 91%,
+        100% 100%
+    );
+
+    filter:
+        drop-shadow(
+            0 -12px 28px rgba(100,70,80,0.13)
+        );
+}
+
+
+/* =====================================================
+   РВАНЫЙ СНЕГ
+===================================================== */
+
+.mountain-snow {
+    position: absolute;
+
+    top: 7px;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    width: 340px;
+
+    height: 185px;
+
+    z-index: 5;
+
+    background:
+        linear-gradient(
+            120deg,
+            #ffffff 0%,
+            #fffdfd 55%,
+            #f1e8ec 100%
+        );
+
+    clip-path: polygon(
+        50% 0%,
+        59% 12%,
+        67% 23%,
+        74% 20%,
+        81% 34%,
+        88% 30%,
+        94% 43%,
+        100% 39%,
+        96% 55%,
+        90% 51%,
+        84% 68%,
+        77% 60%,
+        70% 77%,
+        63% 68%,
+        56% 88%,
+        50% 76%,
+        44% 92%,
+        38% 72%,
+        31% 82%,
+        24% 65%,
+        17% 72%,
+        11% 55%,
+        4% 60%,
+        0% 43%,
+        7% 34%,
+        14% 37%,
+        20% 23%,
+        28% 27%,
+        36% 12%
+    );
+
+    filter:
+        drop-shadow(
+            0 4px 7px rgba(90,65,75,0.1)
+        );
+}
+
+
+/* =====================================================
+   ЛАДА
+===================================================== */
+
+.climber {
+    position: absolute;
+
+    left: 50%;
+
+    bottom: 75px;
+
+    transform: translateX(-50%);
+
+    z-index: 40;
+
+    transition: 4s ease;
+}
+
+.climber-name {
+    position: absolute;
+
+    bottom: 82px;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 23px;
+
+    font-weight: 600;
+
+    color: #543d45;
+
+    white-space: nowrap;
+
+    opacity: 0;
+
+    transition: 1s ease;
+}
+
+.person {
+    position: relative;
+
+    width: 64px;
+    height: 92px;
+}
+
+.hair {
+    position: absolute;
+
+    top: 0;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    width: 30px;
+    height: 34px;
+
+    border-radius: 50% 50% 45% 45%;
+
+    background: #49343b;
+
+    z-index: 1;
+}
+
+.head {
+    position: absolute;
+
+    top: 5px;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    width: 19px;
+    height: 20px;
+
+    border-radius: 50%;
+
+    background: #dcae9e;
+
+    z-index: 2;
+}
+
+.body {
+    position: absolute;
+
+    top: 23px;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    width: 20px;
+    height: 29px;
+
+    border-radius: 45% 45% 35% 35%;
+
+    background: #815365;
+
+    z-index: 2;
+}
+
+.dress {
+    position: absolute;
+
+    top: 42px;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    width: 42px;
+    height: 30px;
+
+    background: #aa6279;
+
+    border-radius: 30% 30% 45% 45%;
+
+    clip-path: polygon(
+        22% 0,
+        78% 0,
+        100% 100%,
+        0 100%
+    );
+
+    z-index: 2;
+}
+
+
+/* =====================================================
+   РУКИ
+===================================================== */
+
+.arm {
+    position: absolute;
+
+    top: 25px;
+
+    width: 6px;
+    height: 25px;
+
+    border-radius: 8px;
+
+    background: #dcae9e;
+
+    transform-origin: top center;
+
+    z-index: 1;
+}
+
+.left-arm {
+    left: 14px;
+
+    transform: rotate(8deg);
+}
+
+.right-arm {
+    right: 14px;
+
+    transform: rotate(-8deg);
+}
+
+
+/* =====================================================
+   НОГИ
+===================================================== */
+
+.leg {
+    position: absolute;
+
+    top: 68px;
+
+    width: 7px;
+    height: 23px;
+
+    border-radius: 8px;
+
+    background: #523d45;
+
+    transform-origin: top center;
+}
+
+.left-leg {
+    left: 24px;
+
+    transform: rotate(8deg);
+}
+
+.right-leg {
+    right: 24px;
+
+    transform: rotate(-8deg);
+}
+
+
+/* =====================================================
+   ВЕРШИНА
+===================================================== */
+
+.climber.at-summit {
+    bottom: 335px;
+}
+
+.climber.at-summit .climber-name {
+    opacity: 1;
+}
+
+
+/* =====================================================
+   БОКОВЫЕ КОНФЕТТИ
+===================================================== */
+
+.side-confetti {
+    position: absolute;
+
+    top: 40%;
+
+    width: 300px;
+    height: 400px;
+
+    z-index: 50;
+
+    pointer-events: none;
+}
+
+.left-confetti {
+    left: -20px;
+}
+
+.right-confetti {
+    right: -20px;
+}
+
+.side-piece {
+    position: absolute;
+
+    width: 9px;
+    height: 17px;
+
+    border-radius: 3px;
+
+    opacity: 0;
+}
+
+@keyframes sideConfettiLeft {
+
+    0% {
+        opacity: 0;
+
+        transform:
+            translate(150px, 100px)
+            rotate(0deg)
+            scale(0.4);
+    }
+
+    15% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+
+        transform:
+            translate(-330px, -180px)
+            rotate(720deg)
+            scale(1.2);
+    }
+}
+
+@keyframes sideConfettiRight {
+
+    0% {
+        opacity: 0;
+
+        transform:
+            translate(-150px, 100px)
+            rotate(0deg)
+            scale(0.4);
+    }
+
+    15% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+
+        transform:
+            translate(330px, -180px)
+            rotate(-720deg)
+            scale(1.2);
+    }
+}
+
+.side-piece.left {
+    animation:
+        sideConfettiLeft 2.7s ease-out forwards;
+}
+
+.side-piece.right {
+    animation:
+        sideConfettiRight 2.7s ease-out forwards;
+}
+
+
+/* =====================================================
+   ПОСЛЕДНИЙ ЭКРАН
+===================================================== */
+
+.final {
+    min-height: 100vh;
+
+    background:
+        radial-gradient(
+            circle at center,
+            #fff0f4 0%,
+            #ffffff 62%
+        );
+
+    text-align: center;
+
+    justify-content: center;
+}
+
+
+/* =====================================================
+   БОЛЬШИЕ ЛИАНЫ
+===================================================== */
+
+.final::before,
+.final::after {
+    content: "";
+
+    position: absolute;
+
+    width: 360px;
+
+    height: 900px;
+
+    pointer-events: none;
+
+    opacity: 0.58;
+
+    border: 3px solid rgba(207, 119, 147, 0.38);
+
+    border-color:
+        rgba(207,119,147,0.38)
+        transparent
+        transparent
+        transparent;
+
+    border-radius: 50%;
+}
+
+.final::before {
+    left: -170px;
+
+    top: -80px;
+
+    transform: rotate(-23deg);
+
+    box-shadow:
+        35px 90px 0 -10px rgba(207,119,147,0.25),
+        15px 210px 0 -8px rgba(207,119,147,0.28),
+        45px 340px 0 -12px rgba(207,119,147,0.22),
+        5px 500px 0 -9px rgba(207,119,147,0.25),
+        50px 650px 0 -13px rgba(207,119,147,0.21);
+}
+
+.final::after {
+    right: -170px;
+
+    bottom: -80px;
+
+    transform: rotate(-23deg);
+
+    box-shadow:
+        -35px -90px 0 -10px rgba(207,119,147,0.25),
+        -15px -210px 0 -8px rgba(207,119,147,0.28),
+        -45px -340px 0 -12px rgba(207,119,147,0.22),
+        -5px -500px 0 -9px rgba(207,119,147,0.25),
+        -50px -650px 0 -13px rgba(207,119,147,0.21);
+}
+
+
+/* =====================================================
+   ФИНАЛ
+===================================================== */
+
+.final-content {
+    max-width: 850px;
+
+    position: relative;
+
+    z-index: 5;
+}
+
+.final-content::before,
+.final-content::after {
+    content: "♡  ♡  ♡  ♡  ♡  ♡  ♡  ♡";
+
+    position: absolute;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 28px;
+
+    letter-spacing: 24px;
+
+    color: rgba(197, 103, 132, 0.35);
+
+    pointer-events: none;
+
+    white-space: nowrap;
+}
+
+.final-content::before {
+    right: calc(100% + 20px);
+
+    top: 5%;
+
+    transform: rotate(-65deg);
+}
+
+.final-content::after {
+    left: calc(100% + 20px);
+
+    bottom: 5%;
+
+    transform: rotate(-65deg);
+}
+
+
+/* =====================================================
+   ФИНАЛЬНЫЙ ТЕКСТ
+===================================================== */
+
+.crown {
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 78px;
+
+    color: #c57a8f;
+
+    line-height: 1;
+
+    margin-bottom: 25px;
+
+    animation: crownFloat 3s ease-in-out infinite;
+
+    text-shadow:
+        0 4px 15px rgba(190,105,130,0.15);
+}
+
+@keyframes crownFloat {
+
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-7px);
+    }
+}
+
+.final-text {
+    max-width: 700px;
+
+    margin: 45px auto 0;
+
+    font-size: 21px;
+
+    line-height: 1.9;
+
+    color: #59494f;
+}
+
+.heart {
+    font-size: 62px;
+
+    color: #c96882;
+
+    margin-top: 45px;
+
+    animation: heartBeat 2s infinite;
+}
+
+@keyframes heartBeat {
+
+    0%, 100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.15);
+    }
+}
+
+.final-line {
+    width: 70px;
+
+    height: 2px;
+
+    background: #d5899d;
+
+    margin: 35px auto;
+}
+
+.final-wish {
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 46px;
+
+    color: #9f5369;
+}
+
+.signature {
+    margin-top: 18px;
+
+    font-size: 13px;
+
+    letter-spacing: 2px;
+
+    color: #9e777f;
+}
+
+
+/* =====================================================
+   КОНФЕТТИ
+===================================================== */
+
+.confetti-container {
+    position: fixed;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    z-index: 2000;
+}
+
+.confetti {
+    position: absolute;
+
+    top: -20px;
+
+    width: 8px;
+    height: 14px;
+
+    border-radius: 2px;
+
+    background: #d77f97;
+
+    animation: fall linear forwards;
+}
+
+@keyframes fall {
+
+    to {
+        transform:
+            translateY(110vh)
+            rotate(900deg);
+    }
+}
+
+
+/* =====================================================
+   МОБИЛЬНАЯ ВЕРСИЯ
+===================================================== */
+
+@media (max-width: 700px) {
+
+    .section {
+        padding: 100px 25px;
+    }
+
+    .hero h1 {
+        font-size: clamp(55px, 18vw, 90px);
+    }
+
+    .hero-subtitle {
+        font-size: 18px;
+    }
+
+    .greeting-text {
+        margin-top: 45px;
+
+        font-size: 17px;
+
+        line-height: 1.8;
+    }
+
+    .dream-intro {
+        font-size: 28px;
+    }
+
+    .dream-cards {
+        grid-template-columns: 1fr;
+
+        margin-top: 50px;
+    }
+
+    .dream-card {
+        padding: 32px;
+    }
+
+    .dream-card h3 {
+        font-size: 48px;
+    }
+
+    .together {
+        margin-top: 55px;
+    }
+
+    .together p {
+        font-size: 27px;
+    }
+
+
+    /* =================================================
+       ЭВЕРЕСТ
+    ================================================= */
+
+    .mountain-content {
+        top: 3%;
+
+        width: 96%;
+    }
+
+    .mountain-title {
+        font-size: 29px;
+    }
+
+    .mountain-number {
+        font-size: 70px;
+
+        letter-spacing: 2px;
+
+        margin-bottom: 15px;
+    }
+
+    .mountain-number span {
+        font-size: 19px;
+    }
+
+    .mountain-text {
+        top: 185px;
+
+        width: 94%;
+
+        gap: 8px;
+    }
+
+    .mountain-message {
+        width: 46%;
+
+        padding: 10px;
+
+        font-size: 11px;
+
+        line-height: 1.45;
+    }
+
+    .paw {
+        font-size: 20px;
+
+        margin-bottom: 4px;
+    }
+
+    .right-message {
+        margin-top: 25px;
+    }
+
+    .summit-button {
+        top: 305px;
+
+        padding: 10px 15px;
+
+        font-size: 8px;
+    }
+
+
+    /* гора */
+
+    .main-mountain {
+        width: 600px;
+
+        height: 420px;
+
+        bottom: -55px;
+    }
+
+    .mountain-snow {
+        width: 215px;
+
+        height: 115px;
+    }
+
+
+    .climber {
+        bottom: 50px;
+    }
+
+    .climber.at-summit {
+        bottom: 255px;
+    }
+
+
+    /* =================================================
+       ПОСЛЕДНЯЯ СТРАНИЦА
+    ================================================= */
+
+    .final {
+        padding: 80px 25px;
+    }
+
+    .final::before,
+    .final::after {
+        width: 230px;
+
+        height: 700px;
+
+        opacity: 0.42;
+    }
+
+    .final::before {
+        left: -135px;
+    }
+
+    .final::after {
+        right: -135px;
+    }
+
+    .final-content::before,
+    .final-content::after {
+        display: none;
+    }
+
+    .crown {
+        font-size: 65px;
+    }
+
+    .final-text {
+        font-size: 18px;
+
+        line-height: 1.8;
+    }
+
+    .final-wish {
+        font-size: 37px;
+    }
+}

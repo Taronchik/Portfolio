@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 500" role="img" aria-labelledby="title description">
+  <title id="title">Фрагмент Python-кода для поиска пользователей GitHub</title>
+  <desc id="description">Оформленный как редактор кода фрагмент main2.py: запрос к API GitHub и вывод найденных логинов.</desc>
+  <rect width="900" height="500" rx="12" fill="#0d1117"/>
+  <path d="M12 0h876a12 12 0 0 1 12 12v48H0V12A12 12 0 0 1 12 0Z" fill="#161b22"/>
+  <circle cx="25" cy="30" r="6" fill="#f07178"/>
+  <circle cx="47" cy="30" r="6" fill="#e5c07b"/>
+  <circle cx="69" cy="30" r="6" fill="#98c379"/>
+  <text x="450" y="35" fill="#aab2bf" font-family="Consolas, 'Courier New', monospace" font-size="15" text-anchor="middle">day17 / main2.py</text>
+  <rect x="0" y="60" width="58" height="440" fill="#11161d"/>
+  <g font-family="Consolas, 'Courier New', monospace" font-size="17" dominant-baseline="middle">
+    <g fill="#566170" text-anchor="end">
+      <text x="43" y="99">1</text><text x="43" y="132">2</text><text x="43" y="165">3</text>
+      <text x="43" y="198">4</text><text x="43" y="231">5</text><text x="43" y="264">6</text>
+      <text x="43" y="297">7</text><text x="43" y="330">8</text><text x="43" y="363">9</text>
+      <text x="43" y="396">10</text><text x="43" y="429">11</text><text x="43" y="462">12</text>
+    </g>
+    <g xml:space="preserve">
+      <text x="76" y="99"><tspan fill="#c678dd">import</tspan><tspan fill="#e6e6e6"> requests</tspan></text>
+      <text x="76" y="165"><tspan fill="#e6e6e6">response = requests.</tspan><tspan fill="#61afef">get</tspan><tspan fill="#e6e6e6">(</tspan></text>
+      <text x="76" y="198"><tspan fill="#e6e6e6">    f</tspan><tspan fill="#98c379">"https://api.github.com/search/users"</tspan><tspan fill="#e6e6e6">,</tspan></text>
+      <text x="76" y="231"><tspan fill="#e6e6e6">    params = {</tspan><tspan fill="#98c379">"q"</tspan><tspan fill="#e6e6e6">: name})</tspan></text>
+      <text x="76" y="297"><tspan fill="#e6e6e6">data = response.</tspan><tspan fill="#61afef">json</tspan><tspan fill="#e6e6e6">()</tspan></text>
+      <text x="76" y="363"><tspan fill="#e6e6e6">print(data.</tspan><tspan fill="#61afef">keys</tspan><tspan fill="#e6e6e6">())</tspan></text>
+      <text x="76" y="396"><tspan fill="#e6e6e6">print(data[</tspan><tspan fill="#98c379">"total_count"</tspan><tspan fill="#e6e6e6">])</tspan></text>
+      <text x="76" y="429"><tspan fill="#c678dd">for</tspan><tspan fill="#e6e6e6"> i </tspan><tspan fill="#c678dd">in</tspan><tspan fill="#e6e6e6"> data[</tspan><tspan fill="#98c379">"items"</tspan><tspan fill="#e6e6e6">]:</tspan></text>
+      <text x="76" y="462"><tspan fill="#e6e6e6">    print(i[</tspan><tspan fill="#98c379">"login"</tspan><tspan fill="#e6e6e6">])</tspan></text>
+    </g>
+  </g>
+</svg>

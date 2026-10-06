@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Учебные заметки Тарона Авагяна по C, C++, Python, HTML, CSS и JavaScript.">
+    <title>PORTFOLIO — Заметки</title>
+    <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="../js/main.js" defer></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="site-brand" href="../index.html" aria-label="PORTFOLIO — главная">
+        <img src="../assets/favicon.svg" alt="" width="60" height="60">
+      </a>
+      <nav class="site-nav" aria-label="Основная навигация">
+        <a href="../index.html">Главная</a>
+        <a href="about.html">Обо мне</a>
+        <a href="materials.html">Материалы</a>
+        <a href="projects.html">Проекты</a>
+        <a href="notes.html" aria-current="page">Заметки</a>
+      </nav>
+    </header>
+
+    <main class="notes-page">
+      <section class="text-page-intro notes-intro" aria-labelledby="notes-title">
+        <p class="eyebrow">Моя учебная шпаргалка</p>
+        <h1 id="notes-title">Заметки</h1>
+        <p class="page-lead">Короткие объяснения основных понятий и примеры синтаксиса. Это конспект для повторения, а не полный справочник.</p>
+      </section>
+
+      <nav class="notes-toc" aria-label="Разделы заметок">
+        <a href="#c-notes">C</a>
+        <a href="#cpp-notes">C++</a>
+        <a href="#python-notes">Python</a>
+        <a href="#html-notes">HTML</a>
+        <a href="#css-notes">CSS</a>
+        <a href="#javascript-notes">JavaScript</a>
+      </nav>
+
+      <aside class="syntax-note"><strong>Быстрое сравнение:</strong> в Python двоеточие открывает блок кода, а отступ показывает его границы. В C и C++ инструкции обычно заканчиваются точкой с запятой, а блоки отмечают фигурными скобками. В CSS двоеточие разделяет свойство и значение, а точка с запятой разделяет объявления.</aside>
+
+      <section class="notes-section" id="c-notes" aria-labelledby="c-notes-title">
+        <div class="notes-heading"><p class="eyebrow">Язык программирования</p><h2 id="c-notes-title">C</h2></div>
+        <div class="notes-grid">
+          <article class="notes-card"><h3>Программа и вывод</h3><p><code>#include &lt;stdio.h&gt;</code> подключает объявление <code>printf</code>. Выполнение начинается с <code>main</code>, а <code>return 0;</code> сообщает об успешном завершении. Вызов <code>printf</code> выводит строку; <code>\n</code> переводит строку, а <code>;</code> завершает инструкцию.</p><pre><code>#include &lt;stdio.h&gt;
+
+int main(void) {
+    printf("Hello, world!\n");
+    return 0;
+}</code></pre></article>
+          <article class="notes-card"><h3>Сборка и запуск</h3><p>С Clang программу можно собрать в терминале с предупреждениями компилятора, затем запустить готовый файл:</p><pre><code>clang -std=c17 -Wall -Wextra hello.c -o hello
+./hello</code></pre><p>В некоторых средах команда запуска отличается; онлайн-компилятор обычно выполняет её кнопкой Run.</p></article>
+          <article class="notes-card"><h3>Строки и комментарии</h3><p>Внутри двойных кавычек текст — строка. Экранированные последовательности <code>\"</code> и <code>\\</code> выводят кавычку и обратный слеш; <code>\t</code> вставляет табуляцию. Комментарии <code>//</code> и <code>/* ... */</code> нужны для пояснений и не выводятся программой.</p></article>
+          <article class="notes-card"><h3>Переменные и присваивание</h3><p>Объявление создаёт имя с типом, инициализация задаёт первое значение. При присваивании сначала вычисляется правая часть, затем результат записывается в переменную. Копирование значения в другую переменную не создаёт связь между ними.</p><pre><code>int score = 12;
+score = score + 5;</code></pre></article>
+          <article class="notes-card"><h3>Арифметика и дроби</h3><p><code>+</code>, <code>-</code>, <code>*</code>, <code>/</code> и <code>%</code> — сложение, вычитание, умножение, деление и остаток. Деление двух целых отбрасывает дробную часть. Для дробного результата используйте <code>double</code> и преобразуйте тип до деления, например <code>(double)total / count</code>.</p></article>
+          <article class="notes-card"><h3>Форматирование printf</h3><p>Спецификаторы связывают места в строке с аргументами по порядку: <code>%d</code> для <code>int</code>, <code>%c</code> для символа, <code>%f</code> для дробного значения. Например, <code>%.2f</code> показывает два знака после точки, а <code>%%</code> выводит сам знак процента. Форматирует вывод, но не меняет сохранённое число.</p></article>
+          <article class="notes-card"><h3>Ввод через scanf</h3><p><code>scanf</code> читает значения по форматной строке. Передавайте адрес переменной, например <code>scanf("%d", &amp;count)</code>; для <code>double</code> при вводе используется <code>%lf</code>. Функция возвращает количество успешно прочитанных значений — его стоит проверять перед вычислениями.</p></article>
+          <article class="notes-card"><h3>Функции и формулы</h3><p><code>sqrt</code> и <code>pow</code> из <code>&lt;math.h&gt;</code> возвращают результат вычисления, но сами его не печатают. В некоторых сборках GCC математическую библиотеку подключают флагом <code>-lm</code>. Для именованных констант в примерах использовался <code>#define</code>.</p></article>
+          <article class="notes-card"><h3>Символы и системы счисления</h3><p><code>char</code> хранит код символа; в ASCII код <code>'A'</code> равен 65. Символ цифры <code>'7'</code> отличается от числа <code>7</code>; для цифр от <code>'0'</code> до <code>'9'</code> значение получают выражением <code>digit - '0'</code>. В C также разбирались двоичная система и восьмеричные/шестнадцатеричные литералы <code>026</code> и <code>0x16</code>.</p></article>
+          <article class="notes-card"><h3>Типы, размер и диапазон</h3><p><code>int</code>, <code>long long</code>, <code>unsigned</code>, <code>char</code>, <code>float</code>, <code>double</code> и <code>bool</code> задают разные значения и правила вычислений. Размер можно посмотреть через <code>sizeof</code>, границы целых типов — через макросы из <code>&lt;limits.h&gt;</code>. Размеры и диапазоны зависят от платформы.</p></article>
+          <article class="notes-card"><h3>Преобразования и переполнение</h3><p>Тип результата определяется операндами, а не переменной слева: приведение после вычисления не исправит уже переполненное умножение. Для больших результатов преобразуйте операнд до операции. Переполнение знакового целого в C не имеет гарантированного результата; переполнение беззнакового типа выполняется по модулю его диапазона.</p></article>
+          <article class="notes-card"><h3>Точность дробных чисел</h3><p><code>float</code> и <code>double</code> хранят конечное двоичное приближение, поэтому некоторые десятичные дроби, например <code>0.1</code>, не представляются точно. Формат <code>printf</code> округляет отображаемый текст, но не исправляет и не меняет значение в переменной.</p></article>
+          <article class="notes-card"><h3>Условия и ветвление</h3><p><code>if</code>, <code>else if</code> и <code>else</code> выбирают действие по условию; один <code>if</code> может находиться внутри другого. <code>switch</code> выбирает ветку через <code>case</code>; <code>break</code> завершает её, <code>default</code> задаёт вариант по умолчанию.</p></article>
+          <article class="notes-card"><h3>Массивы</h3><p>Массив хранит несколько значений одного типа. Элементы нумеруются с нуля, поэтому у массива <code>scores</code> первый элемент — <code>scores[0]</code>. Индекс должен оставаться в пределах массива.</p></article>
+        </div>
+      </section>
+      <section class="notes-section" id="cpp-notes" aria-labelledby="cpp-notes-title">
+        <div class="notes-heading"><p class="eyebrow">Язык программирования</p><h2 id="cpp-notes-title">C++</h2></div>
+        <div class="notes-grid">
+          <article class="notes-card"><h3>Структура программы</h3><p><code>#include</code> подключает заголовочный файл. Для ввода и вывода подключается <code>&lt;iostream&gt;</code>. Выполнение начинается с функции <code>main()</code>.</p><pre><code>#include &lt;iostream&gt;
+int main() {
+    return 0;
+}</code></pre></article>
+          <article class="notes-card"><h3>Вывод и ввод</h3><p><code>std::cout</code> выводит данные, <code>std::cin</code> считывает их. Операторы <code>&lt;&lt;</code> и <code>&gt;&gt;</code> задают направление передачи.</p><pre><code>int age;
+std::cout &lt;&lt; "Возраст: ";
+std::cin &gt;&gt; age;</code></pre></article>
+          <article class="notes-card"><h3>Переменные и типы</h3><p>Переменная хранит значение. Примеры базовых типов: <code>int</code> для целого числа, <code>double</code> для дробного, <code>char</code> для символа и <code>bool</code> для логического значения.</p></article>
+          <article class="notes-card"><h3>Первые вычисления</h3><p>Первые задачи закрепляют ввод, вывод, переменные, сложение, вычитание, умножение и деление.</p><pre><code>int first = 7;
+int second = 3;
+int sum = first + second;
+std::cout &lt;&lt; sum;</code></pre></article>
+        </div>
+      </section>
+      <section class="notes-section" id="python-notes" aria-labelledby="python-notes-title">
+        <div class="notes-heading"><p class="eyebrow">Язык программирования</p><h2 id="python-notes-title">Python</h2></div>
+        <div class="notes-grid">
+          <article class="notes-card"><h3>Переменные, типы и ввод</h3><p><code>print()</code> выводит значение, <code>input()</code> получает строку. Для преобразования используются <code>int()</code>, <code>float()</code>, <code>str()</code>; в конспекте есть числа и строки.</p></article>
+          <article class="notes-card"><h3>Условия и сравнения</h3><p><code>if</code>, <code>elif</code> и <code>else</code> выбирают действия по условию. Условия можно объединять и вкладывать. Операторы: <code>&gt;</code>, <code>&lt;</code>, <code>&gt;=</code>, <code>&lt;=</code>, <code>==</code>, <code>!=</code>.</p></article>
+          <article class="notes-card"><h3>Циклы и коллекции</h3><p><code>for</code>, <code>while</code>, <code>break</code>, <code>continue</code>. Списки и словари, перебор пар через <code>.items()</code>, списки словарей и фильтрация записей по условиям.</p></article>
+          <article class="notes-card"><h3>Функции и ошибки</h3><p><code>def</code> создаёт функцию, параметры передают данные, <code>return</code> возвращает результат. <code>print</code> выводит, но не возвращает значение. Ошибки обрабатываются через <code>try</code>, <code>except ValueError</code>.</p></article>
+          <article class="notes-card"><h3>Файлы и JSON</h3><p><code>open()</code> открывает файл для чтения (<code>"r"</code>) или записи (<code>"w"</code>). <code>with open(...)</code> закрывает файл после работы. Модуль <code>json</code>: <code>json.dump()</code> и <code>json.load()</code>.</p></article>
+          <article class="notes-card"><h3>Модули, pip и API</h3><p><code>import</code> подключает модули. <code>pip</code> устанавливает пакеты, например <code>requests</code>. В конспекте есть HTTP GET-запросы, статус ответа, разбор JSON и получение данных GitHub API.</p></article>
+        </div>
+      </section>
+      <section class="notes-section" id="html-notes" aria-labelledby="html-notes-title">
+        <div class="notes-heading"><p class="eyebrow">Язык разметки</p><h2 id="html-notes-title">HTML</h2></div>
+        <div class="notes-grid">
+          <article class="notes-card"><h3>Документ и элементы</h3><p>Создание HTML-файла, базовая структура HTML5, заголовки, абзацы, форматирование текста и подключение отдельного CSS-файла.</p></article>
+          <article class="notes-card"><h3>Теги, ссылки и изображения</h3><p>Блочные и строчные элементы, включая <code>h</code>, <code>p</code>, <code>span</code>, ссылки-якоря, изображения с атрибутами, списки <code>ul</code> и <code>ol</code>, включая вложенные.</p></article>
+          <article class="notes-card"><h3>Контейнеры и навигация</h3><p><code>div</code> группирует содержимое. В макетах курса были карточки, навигация <code>nav</code> со списком ссылок, боковая панель и подвал.</p></article>
+          <article class="notes-card"><h3>Практика курса</h3><p>Карточка товара, сетка элементов, адаптивная навигация, выпадающее меню и Emmet-сокращения для ускорения набора HTML.</p></article>
+        </div>
+      </section>
+      <section class="notes-section" id="css-notes" aria-labelledby="css-notes-title">
+        <div class="notes-heading"><p class="eyebrow">Язык стилей</p><h2 id="css-notes-title">CSS</h2></div>
+        <div class="notes-grid">
+          <article class="notes-card"><h3>Правила и каскад</h3><p>CSS подключается отдельно и задаёт внешний вид HTML. Селектор выбирает элементы, свойства задают оформление. Каскад, специфичность и способы подключения стилей.</p></article>
+          <article class="notes-card"><h3>Размеры и расположение</h3><p><code>margin</code>, <code>padding</code>, рамки, выравнивание, контейнеры, позиционирование. Блочные, строчные и строчно-блочные элементы; единицы <code>px</code>, <code>%</code>, <code>em</code>, <code>rem</code>.</p></article>
+          <article class="notes-card"><h3>Flexbox, Grid и адаптивность</h3><p>Flexbox и CSS Grid для сеток и навигации. Медиазапросы меняют раскладку под экран; адаптивные сетки, боковые панели и меню.</p></article>
+          <article class="notes-card"><h3>Состояния и оформление</h3><p><code>:hover</code>, выпадающее меню и бургер-кнопка на CSS, относительное и абсолютное позиционирование, CSS-анимация, Google Fonts, favicon и видеофон.</p></article>
+          <article class="notes-card"><h3>Bootstrap и сборка страницы</h3><p>Пример на Bootstrap 5: контейнеры и сетка, навигация, карточки, боковая панель, карусель изображений и подвал. Публикация проекта через GitHub Pages.</p></article>
+        </div>
+      </section>
+      <section class="notes-section" id="javascript-notes" aria-labelledby="javascript-notes-title">
+        <div class="notes-heading"><p class="eyebrow">Язык программирования для веба</p><h2 id="javascript-notes-title">JavaScript</h2></div>
+        <div class="notes-grid">
+          <article class="notes-card"><h3>Для чего нужен</h3><p>JavaScript добавляет веб-страницам поведение: реагирует на нажатия, меняет содержимое страницы, проверяет формы и взаимодействует с браузерными API.</p></article>
+          <article class="notes-card"><h3>Переменные и функции</h3><p><code>const</code> создаёт имя, которое нельзя переназначить, а <code>let</code> — имя, которому можно присвоить другое значение. Функция содержит повторно используемый набор инструкций и может вернуть результат.</p><pre><code>function sum(a, b) {
+    return a + b;
+}
+
+const score = sum(2, 3);</code></pre></article>
+          <article class="notes-card"><h3>Объекты и ссылки</h3><p>В JavaScript нет C-подобной арифметики указателей. Объекты и массивы передаются через значения-ссылки; изменение объекта через одну такую ссылку видно и через другую. Примитивы вроде чисел и строк ведут себя иначе.</p></article>
+          <article class="notes-card"><h3>Скобки и точка с запятой</h3><p>Фигурные скобки <code>{ }</code> ограничивают блоки и тела функций. Точка с запятой часто может быть опущена благодаря автоматической вставке, но в учебном коде лучше придерживаться одного стиля и не ставить несколько инструкций на одной строке.</p><pre><code>if (score &gt; 0) {
+    console.log("Положительное число");
+}</code></pre></article>
+        </div>
+      </section>
+
+      <aside class="notes-disclaimer"><p>Заметки будут пополняться по мере обучения. Перед применением нового приёма сверяйся с документацией языка или технологии.</p></aside>
+    </main>
+
+    <footer class="site-footer">
+      <span>Тарон Авагян</span>
+      <a class="back-link" href="../index.html">На главную ↑</a>
+    </footer>
+    <button class="back-to-top" type="button" aria-label="Наверх" aria-hidden="true" tabindex="-1"><svg class="back-to-top-icon" aria-hidden="true" viewBox="0 0 24 56" preserveAspectRatio="none"><path d="M12 2 6 11h4.5v43h3V11H18z"/></svg></button>
+  </body>
+</html>

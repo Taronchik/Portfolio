@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Учебные проекты Тарона Авагяна.">
+    <title>PORTFOLIO — Проекты</title>
+    <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="../js/main.js" defer></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="site-brand" href="../index.html" aria-label="PORTFOLIO — главная">
+        <img src="../assets/favicon.svg" alt="" width="60" height="60">
+      </a>
+      <nav class="site-nav" aria-label="Основная навигация">
+        <a href="../index.html">Главная</a>
+        <a href="about.html">Обо мне</a>
+        <a href="materials.html">Материалы</a>
+        <a href="projects.html" aria-current="page">Проекты</a>
+        <a href="notes.html">Заметки</a>
+      </nav>
+    </header>
+
+    <main class="text-page projects-page">
+      <section class="text-page-intro" aria-labelledby="projects-title">
+        <p class="eyebrow">Практика и эксперименты</p>
+        <h1 id="projects-title">Проекты</h1>
+        <p class="page-lead">Небольшие программы и упражнения, в которых я применяю новые темы на практике.</p>
+      </section>
+
+      <section class="project-grid" aria-label="Учебные проекты">
+        <article class="project-card">
+          <p class="eyebrow">Python · консольная программа</p>
+          <h2>Калькулятор с меню</h2>
+          <figure class="project-preview">
+            <img src="../assets/calculator-preview.png" alt="Пример работы калькулятора: сложение 12 и 8, результат 20">
+            <figcaption>Пример запуска в консоли с тестовыми числами</figcaption>
+          </figure>
+          <p>Консольная программа предлагает выбрать операцию, запросить два числа и показать результат. В исходнике предусмотрены проверка деления на ноль и обработка нечислового ввода.</p>
+          <ul class="project-tags"><li>Функции</li><li>Условия</li><li>Обработка ошибок</li></ul>
+          <div class="project-code-links" aria-label="Исходный код калькулятора"><span>Код:</span><a href="../projects/source/calculator.py" download>Скачать Python-файл ↘</a></div>
+        </article>
+
+        <article class="project-card">
+          <p class="eyebrow">Python · работа с JSON</p>
+          <h2>Менеджер списка пользователей</h2>
+          <figure class="project-preview">
+            <img src="../assets/user-manager-preview.png" alt="Пример работы менеджера: добавление и просмотр тестовой записи Alex">
+            <figcaption>Добавление и просмотр тестовой записи</figcaption>
+          </figure>
+          <p>Учебная программа для просмотра, добавления, поиска, удаления и редактирования записей. Данные сохраняются в JSON-файл, чтобы оставаться после закрытия программы.</p>
+          <ul class="project-tags"><li>Списки и словари</li><li>Функции</li><li>Файлы JSON</li></ul>
+          <div class="project-code-links" aria-label="Исходный код менеджера пользователей"><span>Код:</span><a href="../projects/source/user_manager.py" download>Скачать Python-файл ↘</a></div>
+        </article>
+
+        <article class="project-card">
+          <p class="eyebrow">Python · API</p>
+          <h2>Поиск пользователей GitHub</h2>
+          <figure class="project-preview">
+            <img src="../assets/github-search-code-preview.svg" alt="Фрагмент Python-кода: запрос к GitHub API и обработка списка результатов">
+            <figcaption>Фрагмент исходника day17/main2.py</figcaption>
+          </figure>
+          <p>Консольный поиск обращается к GitHub API и выводит найденные аккаунты. В проекте используются HTTP-запросы и разбор ответа в формате JSON.</p>
+          <ul class="project-tags"><li>Библиотека requests</li><li>HTTP API</li><li>JSON</li></ul>
+          <div class="project-code-links" aria-label="Исходный код поиска GitHub"><span>Код:</span><a href="../projects/source/github_user_search.py" download>Скачать Python-файл ↘</a></div>
+        </article>
+
+        <article class="project-card">
+          <p class="eyebrow">HTML · CSS · JavaScript</p>
+          <h2>Поздравительная веб-страница</h2>
+          <figure class="project-preview">
+            <img src="../assets/birthday-site-preview.png" alt="Первый экран поздравительного сайта для Лады">
+            <figcaption>Скриншот страницы в компьютерном браузере</figcaption>
+          </figure>
+          <p>Многоэкранная интерактивная страница с плавной прокруткой, анимациями и управлением небольшими эффектами. Персональное имя и возраст оставлены с согласия адресата; музыку из копии для портфолио убрал.</p>
+          <ul class="project-tags"><li>Адаптивная вёрстка</li><li>CSS-анимации</li><li>DOM и события</li></ul>
+          <a class="project-link" href="../projects/birthday-site/index.html" target="_blank" rel="noopener noreferrer">Открыть проект ↗</a>
+          <div class="project-code-links" aria-label="Исходные файлы поздравительного сайта"><span>Исходники:</span><a href="../projects/birthday-site/index.html" download>HTML</a><a href="../projects/birthday-site/style.css" download>CSS</a><a href="../projects/birthday-site/script.js" download>JavaScript</a></div>
+        </article>
+
+        <article class="project-card project-card--wide">
+          <div class="project-info">
+            <p class="eyebrow">HTML · CSS · Bootstrap</p>
+            <h2>Магазин игровой техники HIT</h2>
+            <p>Многостраничный учебный сайт с видеозаставкой, карточками категорий и отдельной страницей каталога. Я привёл тексты и навигацию в порядок, оформил страницы в общей серой гамме и адаптировал карточки для мобильных экранов.</p>
+            <ul class="project-tags"><li>HTML</li><li>CSS</li><li>Bootstrap 5</li><li>Адаптивная сетка</li></ul>
+            <a class="project-link" href="../projects/gaming-store/index.html" target="_blank" rel="noopener noreferrer">Открыть сайт ↗</a>
+            <a class="project-link" href="../projects/gaming-store/pricing.html" target="_blank" rel="noopener noreferrer">Открыть каталог ↗</a>
+            <div class="project-code-links" aria-label="Исходные файлы магазина HIT"><span>Исходники:</span><a href="../projects/gaming-store/index.html" download>HTML</a><a href="../projects/gaming-store/styles/mycss.css" download>CSS</a></div>
+          </div>
+          <figure class="project-preview">
+            <img src="../assets/gaming-store-preview.png" alt="Скриншот главной страницы магазина HIT с серой видеозаставкой и каталогом категорий">
+            <figcaption>Скриншот главной страницы в браузере</figcaption>
+          </figure>
+        </article>
+      </section>
+
+      <aside class="project-note"><p>Скриншоты консольных программ показывают запуск с тестовыми данными. Магазин — учебный макет: корзины и реальной покупки в нём нет. Стили и компоненты Bootstrap загружаются из CDN, поэтому для полной версии сайта нужен интернет.</p></aside>
+    </main>
+
+    <footer class="site-footer">
+      <span>Тарон Авагян</span>
+      <a class="back-link" href="../index.html">На главную ↑</a>
+    </footer>
+    <button class="back-to-top" type="button" aria-label="Наверх" aria-hidden="true" tabindex="-1"><svg class="back-to-top-icon" aria-hidden="true" viewBox="0 0 24 56" preserveAspectRatio="none"><path d="M12 2 6 11h4.5v43h3V11H18z"/></svg></button>
+  </body>
+</html>

@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Учебное портфолио Тарона Авагяна: языки программирования и веб-технологии.">
+    <title>PORTFOLIO — Тарон Авагян</title>
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/main.js" defer></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="site-brand" href="index.html" aria-label="PORTFOLIO — главная">
+        <img src="assets/favicon.svg" alt="" width="60" height="60">
+      </a>
+      <nav class="site-nav" aria-label="Основная навигация">
+        <a href="index.html" aria-current="page">Главная</a>
+        <a href="pages/about.html">Обо мне</a>
+        <a href="pages/materials.html">Материалы</a>
+        <a href="pages/projects.html">Проекты</a>
+        <a href="pages/notes.html">Заметки</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="intro intro-centered" aria-labelledby="intro-title">
+        <p class="eyebrow">Разработчик в процессе обучения</p>
+        <h1 id="intro-title">Тарон Авагян</h1>
+        <p class="intro-text">Изучаю программирование и веб-технологии. Здесь я собираю свой учебный путь, заметки и проекты.</p>
+      </section>
+
+      <section class="rau-feature" aria-labelledby="rau-feature-title">
+        <div class="rau-feature-copy">
+          <p class="eyebrow">РАУ · ПМИ</p>
+          <h2 id="rau-feature-title">Изучаю C и основы программирования</h2>
+          <p>Собираю в заметках темы университетского курса: от первой программы и переменных до типов, вычислений и точности чисел.</p>
+          <a class="rau-feature-link" href="pages/notes.html#c-notes">Открыть заметки по C <span aria-hidden="true">→</span></a>
+        </div>
+        <div class="rau-feature-art" aria-hidden="true">
+          <svg class="rau-orbit" viewBox="0 0 360 360" role="presentation">
+            <defs>
+              <linearGradient id="rau-metal" x1="42" y1="28" x2="306" y2="328" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#fff"/>
+                <stop offset=".28" stop-color="#777"/>
+                <stop offset=".48" stop-color="#eee"/>
+                <stop offset=".68" stop-color="#424242"/>
+                <stop offset="1" stop-color="#d8d8d8"/>
+              </linearGradient>
+              <radialGradient id="rau-core" cx="0" cy="0" r="1" gradientTransform="matrix(82 92 -92 82 138 106)" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#f8f8f8"/>
+                <stop offset=".45" stop-color="#888"/>
+                <stop offset="1" stop-color="#171717"/>
+              </radialGradient>
+            </defs>
+            <circle class="rau-halo" cx="180" cy="180" r="144"/>
+            <g class="rau-ring rau-ring-back"><ellipse cx="180" cy="180" rx="78" ry="142"/></g>
+            <g class="rau-ring rau-ring-front"><ellipse cx="180" cy="180" rx="78" ry="142"/></g>
+            <circle class="rau-orbit-core" cx="180" cy="180" r="65"/>
+            <circle class="rau-satellite" cx="180" cy="38" r="8"/>
+          </svg>
+          <span class="rau-feature-caption">Мой учебный путь</span>
+        </div>
+      </section>
+
+      <section class="learning" aria-labelledby="learning-title">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Мой учебный путь</p>
+            <h2 id="learning-title">Технологии</h2>
+          </div>
+          <p class="section-note">Выберите направление, чтобы посмотреть прогресс</p>
+        </div>
+
+        <div class="technology-grid">
+          <a class="technology-card" href="pages/c.html"><span class="card-index">01</span><span class="card-name">C</span><span class="card-arrow" aria-hidden="true">↗</span></a>
+          <a class="technology-card" href="pages/cpp.html"><span class="card-index">02</span><span class="card-name">C++</span><span class="card-arrow" aria-hidden="true">↗</span></a>
+          <a class="technology-card" href="pages/python.html"><span class="card-index">03</span><span class="card-name">Python</span><span class="card-arrow" aria-hidden="true">↗</span></a>
+          <a class="technology-card" href="pages/html.html"><span class="card-index">04</span><span class="card-name">HTML</span><span class="card-arrow" aria-hidden="true">↗</span></a>
+          <a class="technology-card" href="pages/css.html"><span class="card-index">05</span><span class="card-name">CSS</span><span class="card-arrow" aria-hidden="true">↗</span></a>
+          <a class="technology-card" href="pages/javascript.html"><span class="card-index">06</span><span class="card-name">JavaScript</span><span class="card-arrow" aria-hidden="true">↗</span></a>
+        </div>
+        <div class="learning-actions">
+          <a class="projects-cta" href="pages/projects.html">Посмотреть проекты <span aria-hidden="true">→</span></a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <span>Тарон Авагян</span>
+      <span>Учусь, создаю, продолжаю</span>
+    </footer>
+    <button class="back-to-top" type="button" aria-label="Наверх" aria-hidden="true" tabindex="-1"><svg class="back-to-top-icon" aria-hidden="true" viewBox="0 0 24 56" preserveAspectRatio="none"><path d="M12 2 6 11h4.5v43h3V11H18z"/></svg></button>
+  </body>
+</html>

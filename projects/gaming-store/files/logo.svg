@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 84" role="img" aria-labelledby="title">
+  <title id="title">HIT</title>
+  <defs>
+    <linearGradient id="silver" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#fff"/>
+      <stop offset="1" stop-color="#aeb0b4"/>
+    </linearGradient>
+  </defs>
+  <text x="8" y="68" fill="url(#silver)" font-family="Arial, Helvetica, sans-serif" font-size="72" font-weight="800" letter-spacing="5">HIT</text>
+</svg>

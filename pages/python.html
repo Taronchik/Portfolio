@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Учебный прогресс по Python — портфолио Тарона Авагяна.">
+    <title>PORTFOLIO — Python</title>
+    <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="../js/main.js" defer></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="site-brand" href="../index.html" aria-label="PORTFOLIO — главная">
+        <img src="../assets/favicon.svg" alt="" width="60" height="60">
+      </a>
+      <nav class="site-nav" aria-label="Основная навигация">
+        <a href="../index.html">Главная</a>
+        <a href="about.html">Обо мне</a>
+        <a href="materials.html">Материалы</a>
+        <a href="projects.html">Проекты</a>
+        <a href="notes.html">Заметки</a>
+      </nav>
+    </header>
+
+    <main class="technology-page">
+      <section class="technology-intro" aria-labelledby="technology-title">
+        <a class="back-link back-button" href="../index.html">← Вернуться</a>
+        <p class="eyebrow">Моё обучение</p>
+        <h1 id="technology-title">Python</h1>
+        <p class="intro-text">Мой учебный путь по Python: основы языка и практика.</p>
+      </section>
+
+      <section class="progress-panel" data-progress="" aria-labelledby="progress-title">
+        <div class="progress-copy">
+          <div>
+            <p class="eyebrow">Текущий уровень</p>
+            <h2 id="progress-title">[Укажите свой уровень]</h2>
+          </div>
+          <p class="progress-value"><span data-progress-value>—</span><span data-progress-unit></span></p>
+        </div>
+        <div class="progress-track" role="progressbar" aria-label="Прогресс изучения Python" aria-valuemin="0" aria-valuemax="100">
+          <span class="progress-fill" data-progress-fill></span>
+        </div>
+        <p class="placeholder-note">Чтобы указать процент, задайте число в data-progress, например data-progress="25".</p>
+      </section>
+
+      <div class="detail-grid">
+        <section class="detail-card" aria-labelledby="learned-title">
+          <p class="eyebrow">Уже изучено</p>
+          <h2 id="learned-title">Темы и навыки</h2>
+          <ul class="topic-list">
+            <li>Основы и переменные</li>
+            <li>Условия и циклы</li>
+            <li>Функции</li>
+            <li>Коллекции: списки, кортежи, словари и множества</li>
+            <li>Чтение и запись файлов</li>
+          </ul>
+        </section>
+        <section class="detail-card" aria-labelledby="current-title">
+          <p class="eyebrow">Сейчас</p>
+          <h2 id="current-title">Изучаю сейчас</h2>
+          <p>[Добавьте тему, которую изучаете сейчас]</p>
+        </section>
+        <section class="detail-card" aria-labelledby="projects-title">
+          <p class="eyebrow">Практика</p>
+          <h2 id="projects-title">Проекты</h2>
+          <p>[Добавьте свои учебные проекты]</p>
+        </section>
+        <section class="detail-card" aria-labelledby="next-title">
+          <p class="eyebrow">Следующий шаг</p>
+          <h2 id="next-title">Планирую изучить</h2>
+          <p>[Добавьте темы для дальнейшего изучения]</p>
+        </section>
+      </div>
+
+      <section class="technology-resources" aria-labelledby="resources-title">
+        <h2 id="resources-title">Материалы по Python</h2>
+        <div class="resource-grid">
+          <article class="resource-card">
+            <p class="eyebrow">Видеокурс</p>
+            <h3>Python — полный курс для начинающих</h3>
+            <p>Видеокурс по основам Python от Михаила Шакина.</p>
+            <a class="resource-link" href="https://www.youtube.com/watch?v=wDmPgXhlDIg" target="_blank" rel="noopener noreferrer">Открыть курс ↗</a>
+          </article>
+        </div>
+      </section>
+
+    </main>
+
+    <footer class="site-footer">
+      <span>Тарон Авагян</span>
+      <span>PORTFOLIO</span>
+    </footer>
+    <button class="back-to-top" type="button" aria-label="Наверх" aria-hidden="true" tabindex="-1"><svg class="back-to-top-icon" aria-hidden="true" viewBox="0 0 24 56" preserveAspectRatio="none"><path d="M12 2 6 11h4.5v43h3V11H18z"/></svg></button>
+  </body>
+</html>
+
